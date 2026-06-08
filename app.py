@@ -31,7 +31,7 @@ class MyApp:
         self.create_tabs()
         self.setup_task_manager()
         self.setup_study_timer()
-        self.setup_grade_calculator()
+        self.setup_notes()
 
         # --- Status bar along the bottom ---
         self.status_var = tk.StringVar(value="Ready")
@@ -74,12 +74,12 @@ class MyApp:
 
         self.tab_tasks  = ttk.Frame(self.notebook)
         self.tab_timer  = ttk.Frame(self.notebook)
-        self.tab_grades = ttk.Frame(self.notebook)
+        self.notes = ttk.Frame(self.notebook)
 
         # TODO (Part 2): Rename these to match your app's features
         self.notebook.add(self.tab_tasks,  text="Tasks")
         self.notebook.add(self.tab_timer,  text="Study Timer")
-        self.notebook.add(self.tab_grades, text="Grades")
+        self.notebook.add(self.notes, text="Notes")
 
     # ================================================================
     # PART 1 & 2 — TAB CONTENT
@@ -195,23 +195,26 @@ class MyApp:
         self.timer_seconds = 0
         self._timer_job = None  # holds the root.after() reference so we can cancel it
 
-    def setup_grade_calculator(self):
+    def setup_notes(self):
         """
         Build the Grade Calculator tab.
         This is a placeholder — complete it after the other tabs are working.
         """
         tk.Label(
-            self.tab_grades,
-            text="Grade Calculator",
+            self.notes,
+            text="Notes ",
             font=("Arial", 16, "bold")
         ).pack(pady=(15, 5))
 
         tk.Label(
-            self.tab_grades,
-            text="Coming soon — build this after Part 1 is complete.",
+            self.notes,
+            text="Type Notes Below",
             font=("Arial", 11),
             fg="#888888"
         ).pack(pady=20)
+        self.text_box = tk.Text(self.notes,height=40,width=90)
+        self.text_box.pack()
+        
 
         # TODO (stretch goal): Replace the placeholder above with a form
         # where the user enters assignment names, scores, and weights,
@@ -330,7 +333,9 @@ class MyApp:
         """Save app data to a JSON file chosen by the user."""
         data = {
             "tasks": list(self.task_listbox.get(0, tk.END)),
+            "notes": self.text_box.get('1.0',tk.END )
             # Add more keys here as you build more features
+            
         }
         filename = filedialog.asksaveasfilename(
             defaultextension=".json",
@@ -357,6 +362,8 @@ class MyApp:
                 self.task_listbox.insert(tk.END, task)
             self.status_var.set(f"Loaded from {filename}")
             messagebox.showinfo("Loaded", "Your data has been loaded successfully.")
+        self.text_box.delete("1.0", tk.END)
+        self.text_box.insert("1.0", data.get("notes", ""))
 
     def show_about(self):
         """Producitivity Suite is an app used by students to keep track of things they have to do and set timers to keep them on track"""
