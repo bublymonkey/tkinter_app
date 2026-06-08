@@ -1,9 +1,9 @@
 # app.py
 # ---------------------------------------------------------------
-# YOUR NAME:
-# PROJECT NAME:
-# DATE STARTED:
-# DESCRIPTION:
+# YOUR NAME:Zane McCrudden
+# PROJECT NAME: Prodoctivity Suite
+# DATE STARTED:6/7/2026
+# DESCRIPTION: This is an app with a simple todo list and timer.
 #   (Write 2-3 sentences describing what your app does.)
 # ---------------------------------------------------------------
 
@@ -18,7 +18,7 @@ class MyApp:
     def __init__(self, root):
         # --- Window setup ---
         self.root = root
-        self.root.title("Student Productivity Suite")  # TODO: Change to your app name
+        self.root.title("Productivity Suite")  
         self.root.geometry("850x620")
         self.root.minsize(600, 400)
 
@@ -359,7 +359,7 @@ class MyApp:
             messagebox.showinfo("Loaded", "Your data has been loaded successfully.")
 
     def show_about(self):
-        """Show an About dialog."""
+        """Producitivity Suite is an app used by students to keep track of things they have to do and set timers to keep them on track"""
         # TODO: Update with your name and app description
         messagebox.showinfo(
             "About",
