@@ -244,26 +244,79 @@ Stage all your changes and write a commit message that names your feature and br
 
 ### Part 3A: Code Review
 
-Open `code_review_sample.py` and run it. Read through the entire file carefully. Then create a new file called `code_review.txt` in your project and write your review there.
+Open `code_review_sample.py` and run it. Read through the file carefully and try using the app in several different ways.
 
-Your review must cover all five sections:
+Before writing your review, test the app by doing each of the following:
 
-**1. What does this app do?**
+- Add a normal note
+- Add a blank note
+- Delete a selected note
+- Click **Delete** without selecting a note
+- Save multiple notes, then open `notes.txt`
+
+Then create a new file called `code_review.txt` in your project folder and write your review there.
+
+Your review must include all five sections below.
+
+#### 1. What does this app do?
+
 In 2–3 sentences, describe what the app is supposed to do from a user's perspective.
 
-**2. What works well?**
-Identify at least **2 specific things** the code does correctly or clearly. Reference line numbers.
+Example sentence starter:
 
-**3. What could break?**
-Identify at least **2 things** that could cause an error or unexpected behavior. Describe exactly what a user would need to do to trigger the problem.
+> This app allows the user to...
 
-**4. Code quality issues**
-Identify at least **2 issues** with readability or style — variable names, missing comments, duplicated logic, unclear structure.
+#### 2. One thing that works well
 
-**5. One concrete fix**
-Pick the single most important problem and write the corrected code. Show the before and after.
+Identify one specific part of the code that works correctly or is easy to understand. Include a line number.
 
-> A useful code review is specific and actionable. "This is confusing" isn't helpful. "Line 8: the function name `b` should be `add_note` so its purpose is immediately clear" is helpful.
+Example:
+
+> Line 24 works well because...
+
+#### 3. One thing that could break
+
+Identify one action that could cause an error or unexpected behavior. Explain exactly what the user would need to do to trigger the problem.
+
+Example:
+
+> If the user clicks Delete without selecting a note, then...
+
+#### 4. One code quality issue
+
+Identify one issue with readability, naming, comments, duplicated logic, or organization.
+
+Example:
+
+> Line 18 could be improved because...
+
+#### 5. One concrete fix
+
+Choose one problem and show how you would fix it. Include both the original code and your corrected version.
+
+Use this format:
+
+```python
+# Before
+original code here
+```
+
+```python
+# After
+corrected code here
+```
+
+Then explain why your fix improves the program.
+
+A useful code review is specific and actionable.
+
+Not helpful:
+
+> This is confusing.
+
+Helpful:
+
+> Line 18: `delete_note` can crash if the user clicks Delete without selecting a note, because `selected_note` is empty.
 
 ---
 
