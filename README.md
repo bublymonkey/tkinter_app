@@ -219,9 +219,9 @@ Regardless of which feature you chose, your tab must have:
 
 - [ ] A renamed tab label that matches your feature
 - [ ] A `setup_` method containing all widget and layout code for your tab
-- [ ] At least **2 different widget types** not already used in your tab (check the quick reference at the bottom)
+- [ ] At least **1 different widget type** not already used in your tab (check the quick reference at the bottom)
 - [ ] `grid()` or `pack()` used deliberately — add a comment explaining your layout choice
-- [ ] At least **2 event handler methods** with working logic
+- [ ] At least **1 event handler method** with working logic
 - [ ] Input validation on all user input — no crashes on empty or invalid values
 - [ ] Your feature's data included in `save_data()` and loaded back in `load_data()`
 - [ ] Every new method has a one-line docstring
