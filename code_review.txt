@@ -1,0 +1,8 @@
+This app allows the user to write, delete and save notes. This can be used to keep track of information or for things like studying. 
+
+delete_note() works well because if you delete a note with nothing selected the app functions like expected and spits an error into the command line while continuing to function 
+
+The save function does not work, it never created a notes.txt file.
+
+There is no comments explaining how the code functions and although the file is short it makes readability suffer.
+
