@@ -24,6 +24,8 @@ def add_note():
 
 def delete_note():
     selected_note = note_listbox.curselection()
+    if len(selected_note) == 0:
+        return
     note_listbox.delete(selected_note)
     notes.pop(selected_note[0])
 
