@@ -197,8 +197,7 @@ class MyApp:
 
     def setup_notes(self):
         """
-        Build the Grade Calculator tab.
-        This is a placeholder — complete it after the other tabs are working.
+        Note tab, allows for data to be saved and loaded later using the Text widget
         """
         tk.Label(
             self.notes,
