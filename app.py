@@ -44,6 +44,10 @@ class MyApp:
             font=("Arial", 9),
             fg="#555555"
         ).pack(side="bottom", fill="x")
+    def exit_notes_focus(self, event=None):
+        """Removes focus from the text box to allow easier keyboard tab navigation."""
+        self.root.focus_set()
+        self.status_var.set("Exited notes editing. Use Tab to navigate.")
 
     # ================================================================
     # PART 2 — MENU & TABS
@@ -213,6 +217,7 @@ class MyApp:
         ).pack(pady=20)
         self.text_box = tk.Text(self.notes,height=40,width=90)
         self.text_box.pack()
+        self.text_box.bind("<Escape>", self.exit_notes_focus)
         
 
         # TODO (stretch goal): Replace the placeholder above with a form
